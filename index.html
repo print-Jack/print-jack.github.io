@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/jrm.png" type="x-icon">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>Jack Royers Mugambi</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: hsl(0, 0%, 3%);
+    color: hsl(0, 0%, 100%);
+}                                                    
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/Jack_at_Dan_Dadan.png);
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
+    
+}
+.logo{
+    width: 140px;
+
+    }
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: hsl(341, 100%, 50%);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: .5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: hsl(341, 100%, 50%);
+}
+.icons.menu{
+    width: 25px;
+    display: none;
+    transition: background .5s transform 2.7s;
+}
+.icons.menu:hover{
+    background: gray;
+    transform: scale(1.3);
+}
+
+
+
+
+/*------------------------------about----------------------------*/
+
+#about{
+    padding: 80px 0;
+    color: hsl(0, 0%, 67%);
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: hsl(0, 0%, 100%);
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: "";
+    width: 0;
+    height: 3px;
+    background: hsl(341, 100%, 50%);
+    position: absolute;
+    left: 0 ;
+    bottom: -8px;
+    transition: .5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-content ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-content ul li span{
+    color: hsl(341, 44%, 49%);
+    font-size: 14px;
+}
+.tab-content{
+    display: none;
+}
+.tab-content.active-tab{
+    display: block;
+}
+
+
+/*------------------------------services----------------------------*/
+
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div{
+    background: hsl(0, 0%, 15%);
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+.icons{
+    width: 50px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 3px 3px 5px black;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background-color: hsl(341, 100%, 50%);
+    transform: translateY(-10px);
+}
+
+
+/*--------------------------------------portifolio---------------------------*/
+
+#potifolio{
+    padding: 50px 0;
+
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+    
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(hsla(0, 0%, 0%, 0.6),hsl(341, 100%, 50%));
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+.layer a{
+    margin-top: 20px;
+    text-decoration: none;
+    line-height: 60px;
+    font-size: 18px;
+    background: hsl(0, 0%, 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    transition: transform .5s;
+
+}
+.layer a:hover{
+    background: hsl(0, 0%, 15%);
+    transform: scale(.8);
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid hsl(341, 100%, 50%);
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    transition: background .5s;
+}
+.btn:hover{
+    background: hsl(341, 100%, 50%);
+
+}
+
+/*----------------------------------------------------------contact-------------------------------------*/
+
+.conts{
+    width: 30px;
+    background: hsl(341, 100%, 50%);
+    text-align: center;
+    margin-right: 15px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.social-icon{
+    width: 30px;
+    background: hsl(0, 0%, 67%);
+    border-radius: 5px;
+    padding: 5px;
+    transition: background .5s transform 1s;
+}
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    margin-right: 15px;
+    display: inline-block;
+}
+.social-icon:hover{
+    background: hsl(341, 100%, 50%);
+    transform: scale(1.2);
+}
+.btn.btn2{
+    display: inline-block;
+}
+.btn.btn3{
+    background: hsl(341, 100%, 50%);
+    display: inline-block;
+}
+.btn.btn3:hover{
+    background: hsla(341, 100%, 50%, 0.506);
+}
+.btn.btn3:focus{
+    border: 1px solid hsl(0, 0%, 100%);
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: hsl(0, 0%, 15%);
+    padding: 15px;
+    margin: 15px 0;
+    color: hsl(0, 0%, 100%);
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn3{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626; 
+    font-synthesis-weight: 300;
+    margin-top: 20px;
+}
+
+/*-------------------------------------css for smaller screens--------------------------------*/
+
+@media only screen and (max-width: 600px){
+    #header{
+       background-image: url(../assets/Jack-potrait.png); 
+    } 
+    .header-text{
+        margin-top: 100%;
+       font-size: 16px; 
+    }
+    .header-text h1{
+       font-size: 30px; 
+    }
+    .icons.menu{
+        width: 25px;
+        display: block;
+    }
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: -200px;
+        height: 100vh;
+        z-index: 50;
+        padding-top: 50px ;
+        transition: right 1s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .icons.menu{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .about-col-1 {
+      flex-basis: 100%;  
+    }
+    .about-col-2{
+        flex-basis: 100%;
+        font-size: 14px;
+    }
+    .about-col-1{
+        margin-bottom: 40px;
+    }
+    .tab-links{
+        font-size: 16px;
+    }
+}
+#msg {
+    color: #61b720;
+    margin-top: -30px;
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img  src="./jrm.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#potifolio">Potifolio</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                    <img class="icons menu" onclick="closemenu()" src="./close-circle-outline.svg" alt="">
+                </ul>
+                <img class="icons menu" onclick="openmenu()" src="./menu.svg" alt="menu">  
+            </nav>
+            <div class="header-text">
+                <p>FullStack Developer</p>
+                <h1>Hi, I'm <span>Jack</span> <br> <span>Royers Mugambi</span>  <br> from Kenya</h1>
+            </div>
+        </div>
+    </div>
+<!--------------------------------------about-------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="./Jack_Dadan.png" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1> 
+                    <p>I am a dedicated and passionate full-stack developer with a strong foundation in both front-end and back-end technologies. I specialize in React for creating dynamic and responsive user interfaces and FastAPI for building robust REST APIs. My technical journey includes completing Harvard's CS50 series, where I gained a comprehensive understanding of computer science fundamentals, including data structures, algorithms, and various programming concepts.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-content active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span><br>Designing web/App interface</li>
+                            <li><span>Web Development</span><br>Web app Development</li>
+                            <li><span>App Development</span><br>Building Android/iOs apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>Duration</span><br>Sep 2022 - Jan 2024</li>
+                            <li><span>Company</span><br>Loska Entertainment</li>
+                            <li><span>Position</span><br>IT Specialist & Customer Service Representative</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>2020</span><br>Web Dev Crash Course Havard CS50W</li>
+                            <li><span>2021</span><br>Havard CS50 Introduction to Computer science</li>
+                            <li><span>2022</span><br>Havard CS50 React/React Native Crash Course</li>
+                            <li><span>2023</span><br>Fastapi  Crash Course by Sanjeev</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!----------------------services--------------->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <img class="icons"  src="./code-slash.svg" alt="code icon">
+                
+                <h2>Web Design</h2>
+                <p>I am a passionate web developer skilled in front-end and back-end technologies, honed through Harvard's CS50. I craft responsive user interfaces with HTML, CSS, and JavaScript and design robust server-side solutions using Python framework Fastapi. Focused on clean code and user-centric design, I build seamless, scalable web applications while continuously learning new technologies.</p>
+                
+            </div>
+            <div>
+                <img class="icons"  src="./crop.svg" alt="crop icon">
+                <h2>UX/UI Design</h2>
+                <p>I specialize in creating modern, responsive UI/UX designs using Tailwind, CSS, React and advanced design principles. My focus is on crafting visually appealing, user-friendly interfaces that ensure seamless interactions across all devices.</p>
+                
+            </div>
+            <div>
+                <img class="icons"  src="./apps.svg" alt="apps icon">
+                <h2>App development</h2>
+                <p>I create mobile apps using React Native and Tailwind CSS for sleek, responsive designs, and develop robust backends with FastAPI and PostgreSQL for seamless performance and scalability.</p>
+                
+            </div>
+        </div>    
+    </div>
+</div>
+<!---------------------portifolio--------------------------->
+<div id="potifolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="./geranimo-9yvADFNcXOc-unsplash.jpg" alt="work1">
+                <div class="layer">
+                    <h3>Social Media App</h3>
+                    <p>The app connects you to the talented people around the world. The App is in Progress</p>
+                   
+                </div>
+            </div>
+            <div class="work">
+                <img src="./kevin-canlas-LnAg5uKprdY-unsplash.jpg" alt="work2">
+                <div class="layer">
+                    <h3>Music App</h3>
+                    <p>seemles music player with modern ui and pro features. will be available soon</p>
+                    
+                </div>
+            </div>
+            <div class="work">
+                <img src="./leo-bayard-JJgp3Niq8ec-unsplash.jpg" alt="work3">
+                <div class="layer">
+                    <h3>Api App</h3>
+                    <p>The app guides the user through different http methonds and easily building a CRUD Fastapi REST api</p>
+                    
+                </div>
+            </div>
+        </div>
+        <a href="" class="btn">Cooming Soon</a>
+    </div>
+</div>
+<!----------------------------------contacts-------------------------------->
+<div id="contacts">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <img class="conts" src="./message.svg" alt="">royersjack66@gmail.com</p>
+                <p> <img class="conts" src="./phone.svg" alt="">+254 797 060 424</p>
+                <div class="social-icons">
+                    <a href="https://github.com/print-Jack" target="_blank"><img class="social-icon" src="./github.svg" alt=""></a>
+                    <a href="https://x.com/Jack88618066" target="_blank"><img class="social-icon" src="./twitter.svg" alt=""></a>
+                    <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" target="_blank"><img class="social-icon" src="./linkedin.svg" alt=""></a>
+                </div>
+                <a  href="../assets/My Resume.pdf" download class="btn btn2">Download Cv</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn3">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright @ Jack. Made with ❤️ by Jack Royers Mugambi</p>
+    </div>
+    <!--https://script.google.com/macros/s/AKfycbxWI5EOece12bkytTxjHO4hYFY8ht0y3V88WLmdpddL_SaG8G1kvi8nf_Vssbw83NPX/exec-->
+</div>
+    
+  <script>
+    
+    var tablinks = document.getElementsByClassName('tab-links'); 
+    var tabcontents = document.getElementsByClassName('tab-content');
+
+    function opentab(tabname) {
+        for (var tablink of tablinks) {
+            tablink.classList.remove('active-link');
+        }
+        for (var tabcontent of tabcontents) {
+            tabcontent.classList.remove('active-tab');
+        }
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add('active-tab');
+}
+
+  </script>
+  <script>
+    let sidemenu = document.getElementById('sidemenu')
+
+    function openmenu(){
+        sidemenu.style.right = '0'
+    }
+    function closemenu(){
+        sidemenu.style.right = '-200px'
+    }
+  </script>  
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxWI5EOece12bkytTxjHO4hYFY8ht0y3V88WLmdpddL_SaG8G1kvi8nf_Vssbw83NPX/exec'
+    const form = document.forms['submit-to-google-sheet']
+    document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from submitting and refreshing the page
+    // Display success message
+    const msg = document.getElementById("msg");
+    msg.textContent = "Message sent successfully!";
+    msg.style.display = "block";
+
+    // Reset the form
+    this.reset();
+
+    // Optionally, hide the message after a few seconds
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 3000);
+});
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = 'Messase sent sucessfully'
+            setTimeout(function(){
+                msg.innerHTML = ''
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
